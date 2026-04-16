@@ -405,6 +405,11 @@ open class Terminal {
     var gcharset: Int = 0
     var reverseWraparound: Bool = false
     weak var tdel: TerminalDelegate?
+
+    /// Public setter for the terminal delegate.
+    public func setDelegate(_ delegate: TerminalDelegate?) {
+        tdel = delegate
+    }
     private var curAttr: Attribute = CharData.defaultAttr
     private var charToIndexMap: [Character:Int32] = [:]
     private var indexToCharMap: [Int32: Character] = [:]
