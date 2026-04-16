@@ -198,8 +198,13 @@ public final class Buffer {
     
     var scrollback: Int?
     
-    public var lines : CircularBufferLineList {
+    var lines : CircularBufferLineList {
         get { return _lines }
+    }
+
+    /// バッファ内の行数（スクロールバック含む）。
+    public var lineCount: Int {
+        return _lines.count
     }
 
     /// Returns true if any lines in this buffer have images attached
